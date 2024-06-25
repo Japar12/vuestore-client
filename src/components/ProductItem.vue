@@ -26,15 +26,18 @@ export default {
   padding: 20px;
   position: relative;
   width: 32%;
+  box-sizing: border-box; /* Pastikan padding tidak mempengaruhi lebar elemen */
 }
 
 .product-name {
   margin-bottom: 0;
+  text-align: center;
+  
 }
 
 img {
-  height: 200px;
-  width: 200px;
+  max-width: 100%; /* Gambar mengikuti lebar parent */
+  height: auto; /* Mengatur tinggi secara otomatis sesuai aspek gambar */
   border-radius: 5%;
 }
 
@@ -44,5 +47,35 @@ a {
 
 button {
   width: 100%;
+  padding: 10px;
+  font-size: 16px;
+} 
+/* Media query untuk tablet */
+@media (max-width: 768px) {
+  .product-item {
+    width: 48%; /* Dua kolom dengan gap */
+  }
+
+  img {
+    height: 150px;
+  }
+}
+
+/* Media query untuk ponsel */
+@media (max-width: 480px) {
+  .product-item {
+    width: 100%; /* Satu kolom penuh */
+  }
+
+  img {
+    height: 120px;
+  }
+}
+
+/* Media query untuk desktop */
+@media (min-width: 1024px) {
+  .product-item {
+    flex: 1 1 calc(33.333% - 16px); /* Tiga kolom dengan gap */
+  }
 }
 </style>

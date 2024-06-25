@@ -33,6 +33,14 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 14px;
   margin-top: 16px;
+}
+
+/* Media query untuk desktop */
+@media (min-width: 1024px) {
+  .product-item {
+    flex: 1 1 calc(33.333% - 16px); /* Tiga kolom dengan gap */
+  }
 }
 </style>
